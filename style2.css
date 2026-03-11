@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #006eff, #064c5f);
+    color: white;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.topo h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.linktoporight {
+    display: flex;
+    gap: 25px;
+}
+
+.linktoporight a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+}
+
+.linktoporight a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: white;
+    transition: 0.3s;
+}
+
+.linktoporight a:hover::after {
+    width: 100%;
+}
+
+.conteudo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 60px 40px;
+    position: relative; 
+    overflow: hidden;
+}
+
+.conteudo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(studiopolis.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.conteudo > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+.conteudo a {
+    font-size: 18px;
+    max-width: 600px;
+    line-height: 1.6;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    text-decoration: none;
+    color: white;
+    opacity: 1;
+}
+
+.conteudo p:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+.inferior {
+    height: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
