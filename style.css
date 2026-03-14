@@ -1,8 +1,9 @@
 * {
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
@@ -11,6 +12,7 @@ body {
     background: linear-gradient(135deg, #006eff, #064c5f);
     color: white;
 }
+
 .topo {
     display: flex;
     justify-content: space-between;
@@ -21,21 +23,20 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 10;
-  
 }
+
 .topo h1 {
     font-family: 'Playfair Display', serif;
     font-size: 26px;
     font-weight: 700;
     letter-spacing: 1px;
-    
-
-
 }
+
 .linktoporight {
     display: flex;
     gap: 25px;
 }
+
 .linktoporight a {
     text-decoration: none;
     color: white;
@@ -45,6 +46,7 @@ body {
     transition: 0.3s;
     position: relative;
 }
+
 .linktoporight a::after {
     content: "";
     position: absolute;
@@ -55,9 +57,11 @@ body {
     background-color: white;
     transition: 0.3s;
 }
+
 .linktoporight a:hover::after {
     width: 100%;
 }
+
 .conteudo {
     flex: 1;
     display: flex;
@@ -66,6 +70,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 .conteudo::before {
     content: "";
     position: absolute;
@@ -76,6 +81,7 @@ body {
     opacity: 0.4;
     z-index: 0;
 }
+
 .conteudo::after {
     content: "";
     position: absolute;
@@ -83,6 +89,7 @@ body {
     background: linear-gradient(to right, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.05) 50%, transparent 100%);
     z-index: 1;
 }
+
 .hero-split {
     position: relative;
     z-index: 2;
@@ -95,6 +102,7 @@ body {
     margin: 0 auto;
     animation: fadeUp 0.7s ease both;
 }
+
 .hero-text {
     flex: 1;
     min-height: 200px;
@@ -106,16 +114,19 @@ body {
     font-weight: 300;
     line-height: 1.75;
     opacity: 0.9;
-    p {
-        text-shadow: 10px 10px 15px black;
-    }
 }
+
+.hero-text p {
+    text-shadow: 10px 10px 15px black;
+}
+
 .hero-img {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .img-placeholder {
     width: 100%;
     aspect-ratio: 16/9;
@@ -126,16 +137,19 @@ body {
     transition: 0.3s;
     overflow: hidden;
 }
+
 .img-placeholder img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
+
 .img-placeholder:hover {
     background: rgba(255, 255, 255, 0.13);
     border-color: rgba(255, 255, 255, 0.5);
 }
+
 .inferior {
     height: 60px;
     background: rgba(0, 0, 0, 0.8);
@@ -147,6 +161,7 @@ body {
     position: relative;
     z-index: 10;
 }
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -157,15 +172,90 @@ body {
         transform: translateY(0);
     }
 }
+
+/* =====================
+   MOBILE — até 768px
+   ===================== */
 @media (max-width: 768px) {
-    .hero-split {
-        flex-direction: column;
-        gap: 30px;
-    }
+
+    /* Header: empilha título e links */
     .topo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
         padding: 16px 20px;
     }
+
+    .topo h1 {
+        font-size: 22px;
+    }
+
+    /* Links do header: tamanho e espaçamento menores */
+    .linktoporight {
+        gap: 16px;
+        flex-wrap: wrap;          /* se não couber numa linha, quebra */
+    }
+
+    .linktoporight a {
+        font-size: 13px;
+    }
+
+    /* Conteúdo: menos padding lateral */
     .conteudo {
-        padding: 40px 20px;
+        padding: 30px 16px;
+        align-items: flex-start;
+    }
+
+    /* Gradiente de fundo vira vertical no mobile */
+    .conteudo::after {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+    }
+
+    /* Hero: coluna única */
+    .hero-split {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    /* Texto: fonte menor, padding menor */
+    .hero-text {
+        font-size: 15px;
+        padding: 20px;
+        line-height: 1.65;
+        min-height: unset;
+    }
+
+    /* Imagem: ocupa largura toda */
+    .hero-img {
+        width: 100%;
+    }
+
+    .img-placeholder {
+        border-radius: 12px;
+    }
+
+    /* Footer: padding lateral menor */
+    .inferior {
+        padding: 0 20px;
+        font-size: 12px;
+    }
+}
+
+/* =====================
+   MOBILE PEQUENO — até 400px
+   ===================== */
+@media (max-width: 400px) {
+
+    .topo h1 {
+        font-size: 20px;
+    }
+
+    .linktoporight {
+        gap: 10px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+        padding: 16px;
     }
 }
