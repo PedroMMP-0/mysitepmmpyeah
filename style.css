@@ -134,7 +134,7 @@ body {
 .img-placeholder {
     width: 100%;
     max-width: 70px;
-    max-height: 100px;
+    height: 100px;
     aspect-ratio: 16/9;
     background: rgba(255, 255, 255, 0.08);
     border: 2px dashed rgba(255, 255, 255, 0.3);
