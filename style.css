@@ -107,7 +107,7 @@ body {
     line-height: 1.75;
     opacity: 0.9;
     p {
-        text-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+        text-shadow: 10px 10px 15px black;
     }
 }
 .hero-img {
